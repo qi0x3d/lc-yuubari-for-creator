@@ -1,3 +1,6 @@
+# Description:
+#   Utility commands surrounding Hubot uptime.
+
 cronJob = require('cron').CronJob
 
 module.exports = (robot) ->
