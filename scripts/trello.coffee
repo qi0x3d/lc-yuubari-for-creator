@@ -12,7 +12,7 @@ module.exports = (robot) ->
       list = data
     trello.get "/1/cards/IjoAUeZk/checklists", {}, (err, data) ->
       checkbox = data
-    complete = _.where(checkbox[0].checkItems, {"state": "complete"})
+    complete = _.where checkbox[0].checkItems, {"state": "complete"}
     complete = complete.length
     msg.send "現在取り掛かっている#{list.name}の進捗は#{Math.round((complete / Object.keys(checkbox[0].checkItems).length)*100)}%です。頑張りましょう、提督！"
 
