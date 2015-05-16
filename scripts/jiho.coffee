@@ -1,7 +1,7 @@
 # Description:
 #   Utility commands surrounding Hubot uptime.
 
-cronJob = require('node_modules/cron').CronJob
+cronJob = require('cron').CronJob
 
 module.exports = (robot) ->
   cron23 = new cronJob('0 0 23 * * 6,0', () =>
