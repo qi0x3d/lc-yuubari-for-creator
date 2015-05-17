@@ -14,10 +14,10 @@ module.exports = (robot) ->
 
   robot.hear /(p-model|P-MODEL|疲れ|詰|終)/i, (msg) ->
     msg.send msg.random [
-      "https://drive.google.com/file/d/0B0zzemmnSUW8R1RmWDZrTlJZZGs/",
-      "https://drive.google.com/file/d/0B0zzemmnSUW8U0Y1Z0JlbXdzT3M/",
-      "https://drive.google.com/file/d/0B0zzemmnSUW8clZtcVJwNVFOa1U/",
-      "https://drive.google.com/file/d/0B0zzemmnSUW8Q2VRdS1NMUcxWTQ/",
+      "https://dl.dropboxusercontent.com/u/21933469/gif/pmodel%281%29.gif",
+      "https://dl.dropboxusercontent.com/u/21933469/gif/pmodel%282%29.gif",
+      "https://dl.dropboxusercontent.com/u/21933469/gif/pmodel%283%29.gif",
+      "https://dl.dropboxusercontent.com/u/21933469/gif/pmodel%284%29.gif",
       "https://drive.google.com/file/d/0B0zzemmnSUW8d2JBdFZCRFA2VjA/",
       "https://drive.google.com/file/d/0B0zzemmnSUW8UEM4NWFaQ2M2TE0/",
       "https://drive.google.com/file/d/0B0zzemmnSUW8aEtPTHh1NHJsd0E/",
