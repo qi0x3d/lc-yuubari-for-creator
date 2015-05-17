@@ -1,11 +1,14 @@
 # Description:
 #   Utility commands surrounding Hubot uptime.
 
+cronJob = require('cron').CronJob
+
 module.exports = (robot) ->
   Trello = require "node-trello"
   underscore = require "underscore"
   list   = []
   checkbox = []
+  message = "現在取り掛かっている#{list.name}の進捗は#{Math.round((complete / Object.keys(checkbox[0].checkItems).length)*100)}%です。頑張りましょう、提督！"
   robot.hear /進捗/i, (msg) ->
     trello = new Trello(process.env.HUBOT_TRELLO_KEY, process.env.HUBOT_TRELLO_TOKEN)
     trello.get "/1/cards/IjoAUeZk/checklists", {}, (err, data) ->
@@ -14,5 +17,16 @@ module.exports = (robot) ->
       list = data
     complete = underscore.where checkbox[0].checkItems, {"state": "complete"}
     complete = complete.length
-    msg.send "現在取り掛かっている#{list.name}の進捗は#{Math.round((complete / Object.keys(checkbox[0].checkItems).length)*100)}%です。頑張りましょう、提督！"
+    msg.send message
 
+  cron2330 = new cronJob('0 30 23 * * 0-5', () =>
+    envelope = room: "sunpaleets"
+    robot.send envelope, "提督、そろそろお休みください."
+  )
+  cron2330.start()
+
+  cron800 = new cronJob('0 0 8 * * 0-6', () =>
+    envelope = room: "sunpaleets"
+    robot.send envelope, message
+  )
+  cron800.start()
