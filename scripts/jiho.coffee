@@ -4,7 +4,7 @@
 cronJob = require('cron').CronJob
 
 module.exports = (robot) ->
-  cron23 = new cronJob('0 0 23 * * 6,0', () =>
+  cron23 = new cronJob('0 0 23 * * 6-0', () =>
     envelope = room: "general"
     robot.send envelope, "午後11時です。まだ頑張るんですね。じゃぁ、今晩もお付き合いします。"
   )
@@ -34,7 +34,7 @@ module.exports = (robot) ->
   )
   cron2.start()
 
-  cron10 = new cronJob('0 0 10 * * 6,0', () =>
+  cron10 = new cronJob('0 0 10 * * 6-0', () =>
     envelope = room: "general"
     robot.send envelope, "10時です。どう？順調ですか？"
   )
