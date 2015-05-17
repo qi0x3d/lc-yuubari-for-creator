@@ -8,13 +8,12 @@ module.exports = (robot) ->
   robot.hear /(疲|つか)れ/i, (msg) ->
     msg.send msg.random [
       "提督、お休みください。",
-      "提督。さ、夜ご飯にしましょう、銀蝿とかしちゃだめですよ",
       "提督シャキっとしてください。",
       "今日もお疲れ様でした、提督。"
     ]
 
   robot.hear /(p-model|P-MODEL|疲れ|詰|終)/i, (msg) ->
-    msg,send msg.random [
+    msg.send msg.random [
       "https://drive.google.com/file/d/0B0zzemmnSUW8R1RmWDZrTlJZZGs/",
       "https://drive.google.com/file/d/0B0zzemmnSUW8U0Y1Z0JlbXdzT3M/",
       "https://drive.google.com/file/d/0B0zzemmnSUW8clZtcVJwNVFOa1U/",
