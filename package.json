@@ -5,6 +5,7 @@
   "author": "fr-itaya <itaya@fact-real.com>",
   "description": "A simple helpful light cluser girl bot for creator.ator",
   "dependencies": {
+    "cheerio-httpcli": "^0.3.2",
     "cron": "^1.0.9",
     "hubot": "^2.12.0",
     "hubot-cookpad": "fr-itaya/hubot-cookpad",
