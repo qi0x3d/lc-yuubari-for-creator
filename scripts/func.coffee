@@ -12,6 +12,15 @@ module.exports = (robot) ->
       "今日もお疲れ様でした、提督。"
     ]
 
+  robot.hear /(終|おわ)(り|わった|った|りまし)/i, (msg) ->
+    msg.send msg.random [
+      "今日もお疲れ様でした、提督。",
+      "作戦終了!",
+      "データもバッチリね！",
+      "提督、見せて見せて！",
+      "平賀さんの才能ってほんと素敵よね‥、って‥あ、あれ？提督、居たの！？"
+    ]
+
   robot.hear /(p-model|P-MODEL|疲れ|詰|終)/i, (msg) ->
     timestamp = (new Date()).toISOString().replace(/[^0-9]/g, "")
     msg.send msg.random [
