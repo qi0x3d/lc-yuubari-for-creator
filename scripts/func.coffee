@@ -44,5 +44,5 @@ module.exports = (robot) ->
       "今日はおいしいものを食べたいなぁ、天ぷら蕎麦とか！"
     ]
 
-  robot.respond /(電|列)車/i, (msg) ->
+  robot.hear /(電|列)車/i, (msg) ->
     msg.send "列車の運行情報も、私がきっちりチェックするからね！"
