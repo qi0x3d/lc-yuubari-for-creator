@@ -21,7 +21,8 @@ module.exports = (robot) ->
       "平賀さんの才能ってほんと素敵よね‥、って‥あ、あれ？提督、居たの！？"
     ]
 
-  robot.hear /(p-model|P-MODEL|疲れ|詰|終)/i, (msg) ->
+  robot.hear /(p-model|P-MODEL|疲れ|詰|終|おわ)/i, (msg) ->
+    msg.send msg.random [
     timestamp = (new Date()).toISOString().replace(/[^0-9]/g, "")
     msg.send msg.random [
       "https://dl.dropboxusercontent.com/u/21933469/gif/pmodel%281%29.gif?#{timestamp}",
@@ -55,3 +56,10 @@ module.exports = (robot) ->
 
   robot.hear /(電|列)車/i, (msg) ->
     msg.send "列車の運行情報も、私がきっちりチェックするからね！"
+
+  robot.hear /雨(降|雲)/i, (msg) ->
+    msg.send msg.random [
+      "雨雲の動きをチェックするね。",
+      "雨雲の動きはこんな感じよ。",
+      "さぁ！雨雲レーダー試してみても、いいかしら？"
+    ]
