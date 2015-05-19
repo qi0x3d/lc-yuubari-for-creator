@@ -5,6 +5,23 @@ module.exports = (robot) ->
   robot.hear /(夕張|ゆうばり)/i, (msg) ->
     msg.send msg.random ["提督！おはようございます！", "何でしょう？試し撃ち、ご所望ですか？", "あぁ、提督もやっぱりそう思います？ここに兵装まだ載りそうよね、うん。"]
 
+module.exports = (robot) ->
+  robot.hear /(おやすみ)/i, (msg) ->
+    msg.send msg.random [
+      "提督、おやすみなさい。明日もいい一日にしましょうね。",
+      "おやすみなさい。明日もいい一日にしましょうね。",
+      "提督、お疲れ様でした。明日もいい一日にしましょうね。"
+    ]
+
+module.exports = (robot) ->
+  robot.hear /(おはよう)/i, (msg) ->
+    msg.send msg.random [
+      "提督！おはようございます！",
+      "明るい‥。･･もう朝ですか",
+      "さぁ朝のデータ録りますよ。",
+      "おはようございます！良い一日にしましょうね。"
+    ]
+
   robot.hear /(疲|つか)れ/i, (msg) ->
     msg.send msg.random [
       "提督、お休みください。",
