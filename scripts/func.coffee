@@ -22,7 +22,6 @@ module.exports = (robot) ->
     ]
 
   robot.hear /(p-model|P-MODEL|疲れ|詰|終|おわ)/i, (msg) ->
-    msg.send msg.random [
     timestamp = (new Date()).toISOString().replace(/[^0-9]/g, "")
     msg.send msg.random [
       "https://dl.dropboxusercontent.com/u/21933469/gif/pmodel%281%29.gif?#{timestamp}",
