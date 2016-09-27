@@ -32,7 +32,7 @@ module.exports = (robot) ->
       list = data
     complete = underscore.where checkbox[0].checkItems, {"state": "complete"}
     complete = complete.length
-    envelope = room: "sunpaleets"
+    envelope = room: "sample"
     robot.send envelope, "現在取り掛かっている#{list.name}の進捗は#{Math.round((complete / Object.keys(checkbox[0].checkItems).length)*100)}%です。頑張りましょう、提督！"
   )
   cron800.start()
